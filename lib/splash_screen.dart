@@ -1,5 +1,5 @@
-import 'package:carpool_app/search_screen.dart';
 import 'package:flutter/material.dart';
+import 'search_screen.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
@@ -7,15 +7,12 @@ class SplashScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      //provides screen structure
-      backgroundColor: Colors.white, //Sets screen’s background color to white.
+      backgroundColor: Colors.white,
       body: Center(
-        //main screen content is centered horizontally and vertically.
         child: Column(
-          mainAxisAlignment:
-              MainAxisAlignment.center, //ensures column is vertically centered.
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset("assets/car.png", height: 200),
+            Image.asset("assets/car.png", height: 200), // app logo
             const SizedBox(height: 20),
             const Text(
               "CarPoolin",
@@ -25,22 +22,20 @@ class SplashScreen extends StatelessWidget {
               "Drive & Share Money",
               style: TextStyle(color: Colors.grey, fontSize: 16),
             ),
-            const SizedBox(
-              height: 40,
-            ), //Adds 40px vertical spacing before button.
+            const SizedBox(height: 40),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.blue,
                 shape: const CircleBorder(),
                 padding: const EdgeInsets.all(20),
               ),
-              child: const Icon(Icons.arrow_forward, color: Colors.white),
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const SearchScreen()),
+                  MaterialPageRoute(builder: (_) => const SearchScreen()),
                 );
               },
+              child: const Icon(Icons.arrow_forward, color: Colors.white),
             ),
           ],
         ),

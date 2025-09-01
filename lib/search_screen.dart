@@ -1,5 +1,5 @@
-import 'package:carpool_app/ride_details_screen.dart';
 import 'package:flutter/material.dart';
+import 'ride_details_screen.dart';
 
 class SearchScreen extends StatelessWidget {
   const SearchScreen({super.key});
@@ -7,8 +7,7 @@ class SearchScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      //provides basic app page layout
-      backgroundColor: Colors.blue[50], //Sets background to a light blue shade.
+      backgroundColor: Colors.blue[50],
       appBar: AppBar(
         title: const Text("Where are you going?"),
         backgroundColor: Colors.blue,
@@ -46,23 +45,21 @@ class SearchScreen extends StatelessWidget {
                 CircleAvatar(child: Text("3")),
               ],
             ),
-            const Spacer(), //Pushes everything above upwards, so button is stuck to bottom
-            Center(
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  minimumSize: const Size(double.infinity, 50),
-                  backgroundColor: Colors.blue,
-                ),
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const RideDetailsScreen(),
-                    ),
-                  );
-                },
-                child: const Text("Search", style: TextStyle(fontSize: 18)),
+            const Spacer(),
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                minimumSize: const Size(double.infinity, 50),
+                backgroundColor: Colors.blue,
               ),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const RideDetailsScreen(),
+                  ),
+                );
+              },
+              child: const Text("Search", style: TextStyle(fontSize: 18)),
             ),
           ],
         ),

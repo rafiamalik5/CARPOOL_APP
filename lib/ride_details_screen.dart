@@ -1,15 +1,12 @@
-import 'package:flutter/material.dart'; //Imports Flutter’s Material Design widgets library, which provides UI widgets like Scaffold, AppBar, Text, etc.
+import 'package:flutter/material.dart';
 
 class RideDetailsScreen extends StatelessWidget {
   const RideDetailsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    //tells Flutter where this widget is in widget tree.
     return Scaffold(
-      //is basic page layout widget in Flutter
-      backgroundColor:
-          Colors.white, //Sets whole screen’s background color to white.
+      backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.blue,
         title: const Text("Ride Details"),
@@ -17,8 +14,7 @@ class RideDetailsScreen extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.all(20.0),
         child: Column(
-          crossAxisAlignment:
-              CrossAxisAlignment.start, //aligns children to left.
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
               padding: const EdgeInsets.all(15),
@@ -49,20 +45,14 @@ class RideDetailsScreen extends StatelessWidget {
                 ],
               ),
             ),
-            const SizedBox(
-              height: 20,
-            ), //Adds vertical spacing of 20 pixels below ride info.
+            const SizedBox(height: 20),
             Row(
               children: [
                 const CircleAvatar(
                   radius: 30,
-                  backgroundImage: AssetImage(
-                    "assets/driver.jpg",
-                  ), // Driver picture
+                  backgroundImage: AssetImage("assets/driver.jpg"),
                 ),
-                const SizedBox(
-                  width: 15,
-                ), //Adds horizontal spacing between picture and text.
+                const SizedBox(width: 15),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: const [
@@ -78,19 +68,14 @@ class RideDetailsScreen extends StatelessWidget {
                 ),
               ],
             ),
-            const Spacer(), //pushes everything above upwards and forces button to bottom of screen.
-            Center(
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  minimumSize: const Size(
-                    double.infinity,
-                    50,
-                  ), //makes it stretch full width and 50px tall.
-                  backgroundColor: Colors.blue,
-                ),
-                onPressed: () {}, //currently empty
-                child: const Text("Order Now", style: TextStyle(fontSize: 18)),
+            const Spacer(),
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                minimumSize: const Size(double.infinity, 50),
+                backgroundColor: Colors.blue,
               ),
+              onPressed: () {},
+              child: const Text("Order Now", style: TextStyle(fontSize: 18)),
             ),
           ],
         ),
